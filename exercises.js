@@ -67,7 +67,7 @@ function rovarspraket(phrase){
 
     for (var i = 0; i < phrase.length; i++){
       if (letters[i].match(consonants)){   //so using console.log(phrase.split('')); prints my passed string a an array.
-        consonants = letters[i] + 'o' + letter[i];
+        letters[i] + 'o' + letter[i];
       }
 
       //very close to the 'fuck this' attitude and am trying to stay away. It's not like I don't know how to use if else statements, or run loops in order to find values.
@@ -121,32 +121,34 @@ function reverse(word){
     //join the reversed letters
 
     //return the reversed result.
-
-    var letters = word.split('');
-    var reverse = word.reverse('');
-    var myWord = word.join('');
-
-    if (letters {  //in these statements, ask what you want from your argument. In this case, if - letters , what?
-      console.log(word);
-      return true;
-    }else{
-      return false;
-    }
-
+    var o = '';
+    for (var i = word.length - 1; i >= 0; i--){
+    o += word[i];
+    return o;
+  }
 }
-console.assert(reverse('andrew') === 'werdna');
-
+console.assert(reverse('hello') == 'olleh');
 // ---------------------
 // Write a function findLongestWord() that takes an array of words and returns the length of the longest one.
 // ---------------------
 
-function findLongestWord(words){
+function findLongestWord(){
     "use strict";
     //...
-    var wordArray = ['hello', 'goodbye', 'what'];
+    var arr = ['hello', 'goodbye', 'what'];
+    var wlngth = 0;
+    var longest;
 
+    for (var i = 0; i < arr.length; i++){
+      if(arr[i].length > wlngth){
+        var wlngth = arr[i].length;
+        return longest = arr[i];
+      }else{
+        return false
+      }
+    }
 }
-// console.assert(findLongestWord(wordArray) === ?)
+console.assert(findLongestWord());
 // ---------------------
 // Write a function filterLongWords() that takes an array of words and an integer i and returns the array of words that are longer than i.
 // ---------------------
