@@ -126,7 +126,7 @@ function reverse(word){
     o += word[i];
     return o;
   }
-}
+}   //this whole 'passing a value' thing is confusing me. I feel I am making up the assumption I need to pass for everything.
 console.assert(reverse('hello') == 'olleh');
 // ---------------------
 // Write a function findLongestWord() that takes an array of words and returns the length of the longest one.
