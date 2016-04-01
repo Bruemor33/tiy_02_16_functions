@@ -121,10 +121,10 @@ function reverse(word){
     //join the reversed letters
 
     //return the reversed result.
-    var o = '';
-    for (var i = word.length - 1; i >= 0; i--){
-    o += word[i];
-    return o;
+    var h = '';
+    for (var i = word.length - 1; i >= 0; i--){  //here I remembered we can use
+    h += word[i];
+    return h;
   }
 }   //this whole 'passing a value' thing is confusing me. I feel I am making up the assumption I need to pass for everything.
 console.assert(reverse('hello') == 'olleh');
@@ -155,8 +155,18 @@ console.assert(findLongestWord());
 
 function filterLongWords(words, i){
     "use strict";
-    //...
+    var keywords = [];
+    for (var a = 0; a < words.length; a++){
+      words[a];
+      if (words[a].length > i){
+        keywords.push(words[a]);
+      }
+    }
+    return keywords;
 }
+
+var wordlist = ['rock', 'hollywood', 'mother', 'cycling']
+console.log('Longer words: ', filterLongWords(wordlist, 4));
 
 // ---------------------
 // Write a function charFreq() that takes a string and builds a frequency listing of the characters contained in it. Represent the frequency listing as a Javascript object. Try it with something like charFreq("abbabcbdbabdbdbabababcbcbab").
@@ -164,5 +174,15 @@ function filterLongWords(words, i){
 
 function charFreq(string){
     "use strict";
-    //...
+    var frequencyObject = {};
+    for (var i = 0; i < string.length; i++){
+      if (frequencyObject[string[i]]){
+        frequencyObject[string[i]]++
+      }else{
+        frequencyObject[string[i]] = 1
+      }
+    }
+    return frequencyObject
 }
+
+console.log('Frequency Object: ', charFreq('abbabcbdbabdbdbabababcbcbab'));
